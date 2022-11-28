@@ -2,6 +2,12 @@ import os
 import pandas as pd
 from torchvision.io import read_image
 
+"""
+How to split it if the label is as a folder name? 
+Should I download each folder separately and label it?
+It would look like image - name - label
+"""
+
 class DogImageSet(Dataset):
     def __init__(self, annotations_file, img_dir, transform=None, target_transform=None):
         self.img_labels = pd.read_csv(annotations_file)
